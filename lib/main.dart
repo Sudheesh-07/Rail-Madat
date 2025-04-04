@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:rail_madat/hom_page.dart';
-import 'package:rail_madat/login.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:rail_madat/pages/home_page.dart';
+import 'package:rail_madat/pages/login.dart';
 
-void main() {
+void main() async {
+   await GetStorage.init();
   runApp(const MyApp());
 }
 
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: LoginPage(),
     );
   }
 }

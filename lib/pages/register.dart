@@ -2,23 +2,21 @@ import 'package:dotlottie_loader/dotlottie_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   final _formKey = GlobalKey<FormState>();
   String _email = '';
   String _password = '';
   bool _isLoading = false;
   bool isHidden = true;
 
-  void _login() async{
-
-  }
+  void _login() async {}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -137,7 +135,6 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                   SizedBox(height: 20),
-                  
                 ],
               ),
             ),
