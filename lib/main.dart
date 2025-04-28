@@ -16,9 +16,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final box = GetStorage();
+    // Read token from storage
+    String? token = box.read('token');
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+     home: token != null ? const HomePage() : const LoginPage(),
     );
   }
 }

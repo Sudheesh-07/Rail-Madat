@@ -25,6 +25,9 @@ class ComplaintCard extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                IconButton(onPressed: (){
+                  
+                }, icon: Icon(Icons.edit)),
                 Chip(
                   label: Text(
                     complaint.status.toUpperCase(),

@@ -28,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
 
 
   // Replace with your computer's local IP address
-  static const String _baseUrl = 'http://192.168.0.108:8000';
+  static const String _baseUrl = 'https://rail-madad-otq2.onrender.com/';
 
   Future<void> _login() async {
     if (_formKey.currentState!.validate()) {
@@ -50,11 +50,12 @@ class _LoginPageState extends State<LoginPage> {
         if (response.statusCode == 200) {
           // Successful login
          final userId = json.decode(response.body)['user_id'];
-
+        final token = json.decode(response.body)['access'];
            // Store user_id using GetStorage
           final box = GetStorage();
           await box.write('email', _emailController.text.trim());
           await box.write('user_id', userId); 
+          await box.write('token', token);
           Get.off(() => HomePage()); // Navigate to home page
         } else {
           // Handle different status codes
